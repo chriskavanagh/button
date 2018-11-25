@@ -32,7 +32,7 @@ export default class ConfirmButton extends Component {
         const { timesPressed } = this.state;
         const { dialog } = this.props;
         return( 
-        <Button level={timesPressed} onClick={this.onPress}>{dialog[timesPressed]}</Button>
+        <Button level={ timesPressed } onClick={this.onPress}>{dialog[timesPressed]}</Button>
         )
     }
 } // end ConfirmButton

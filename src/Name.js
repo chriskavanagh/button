@@ -4,20 +4,20 @@ import styled from 'styled-components';
 
 export default class Name extends Component {
     state = {
-        name: null
+        name: ""
     }
 
     changeName = (name) => () => {
         this.setState({
             name: name
         })
-    }
+    };
 
     handleChange = (e) => {
         this.setState({
             name: e.target.value
         })
-    }
+    };
 
     render() {
     const { name } = this.state;
