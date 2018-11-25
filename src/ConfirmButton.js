@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
+
 export default class ConfirmButton extends Component {
     static propTypes = {
         action: PropTypes.func.isRequired
@@ -13,11 +14,12 @@ export default class ConfirmButton extends Component {
 
     onPress = () => {
         const { timesPressed } = this.state;
+        const { dialog } = this.props;
         const { action } = this.props;
         this.setState({
             timesPressed: timesPressed + 1
         }, () => {
-            if(this.state.timesPressed===3) {
+            if(this.state.timesPressed === dialog.length) {
                 action();
                 this.setState({
                     timesPressed: 0
@@ -29,7 +31,9 @@ export default class ConfirmButton extends Component {
     render() {
         const { timesPressed } = this.state;
         const { dialog } = this.props;
-        return <Button onClick={this.onPress}>{dialog[timesPressed]}</Button>
+        return( 
+        <Button level={timesPressed} onClick={this.onPress}>{dialog[timesPressed]}</Button>
+        )
     }
 } // end ConfirmButton
 
@@ -44,4 +48,9 @@ const Button = styled.button`
     box-shadow: 1px 1px 5px rgba(0,0,0,0.2);
     margin: 20px 0 20px 0;
     padding: 8px 10px;
+    ${({level}) => {
+        if(level===1) return 'transform: scale(1.2);';
+        if(level===2) return 'transform: scale(1.6);';
+        if(level===3) return 'transform: scale(1.9);';
+    }}
 `;

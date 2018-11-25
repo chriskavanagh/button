@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
+import styled from 'styled-components';
+
 
 export default class Name extends Component {
     state = {
-        name: "Chris"
+        name: null
     }
 
-    changeName = (name) => (e) => {
+    changeName = (name) => () => {
         this.setState({
             name: name
         })
@@ -20,13 +22,17 @@ export default class Name extends Component {
     render() {
     const { name } = this.state;
       return (
-        <div className="name">
-          <button onClick={this.changeName(name)}>Change Name</button>
-          <input type="text" id="name" value={name} onChange={this.handleChange}/>
-          <br/> <br/>
+        <Div className="name">
+          <button onClick={this.changeName("Elvis")}>Change Name</button>
+          <input type="text" id="name" value={name} onChange={this.handleChange} />
           <h3>{ name }</h3>
-        </div>
+        </Div>
       );
     }
   }
   
+  const Div = styled.div`
+    margin: 110px auto;
+    background: #C8C8C8;
+    padding: 20px 20px;
+  `;
