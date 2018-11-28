@@ -32,14 +32,14 @@ export default class ConfirmButton extends Component {
         const { timesPressed } = this.state;
         const { dialog } = this.props;
         return( 
-        <Button level={ timesPressed } onClick={this.onPress}>{dialog[timesPressed]}</Button>
+        <TomatoButton level={ timesPressed } onClick={this.onPress}>{dialog[timesPressed]}</TomatoButton>
         )
     }
 } // end ConfirmButton
 
 
-const Button = styled.button`
-    background: #E54B4B;
+const TomatoButton = styled.button`
+    background: tomato;
     border-radius: 5px;
     border: none;
     color: white;
@@ -51,6 +51,6 @@ const Button = styled.button`
     ${({level}) => {
         if(level===1) return 'transform: scale(1.2);';
         if(level===2) return 'transform: scale(1.6);';
-        if(level===3) return 'transform: scale(1.9);';
+        if(level===3) return 'transform: scale(3.0);background:blue;margin-top:40px;';
     }}
 `;
