@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 export default class Name extends Component {
     state = {
-        name: ""
+        name: null
     }
 
     changeName = (name) => () => {

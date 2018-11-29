@@ -12,7 +12,8 @@ class App extends Component {
       <div className="App">
         <ConfirmButton 
           dialog={['Delete', 'Are You Sure?', '1 More Time', 'DONE!']} 
-          action={ () => console.log("Action!") }/>
+          action={ () => console.log("Action!") }
+      />
         
         <Name/>
 
@@ -21,14 +22,16 @@ class App extends Component {
               {on && <h1>Show Me</h1>}   
               <ToggleButton onClick={toggle}>Show / Hide</ToggleButton>
             </div>
-            )}/>
+            )}
+        />
           
           <Toggle render={({on, toggle}) => (
             <div>
               {on && <nav>Home</nav>}   
               <MenuButton onClick={toggle}>Home</MenuButton>
             </div>
-            )}/>          
+            )}
+          />          
       </div>
     );
   }
