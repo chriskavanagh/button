@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
+
 
 
 export default class ConfirmButton extends Component {
@@ -31,8 +32,14 @@ export default class ConfirmButton extends Component {
     render() {
         const { timesPressed } = this.state;
         const { dialog } = this.props;
-        return( 
-        <TomatoButton level={ timesPressed } onClick={this.onPress}>{dialog[timesPressed]}</TomatoButton>
+        return(
+            <Fragment>
+                <h2 className='red-text'>I am red h2</h2>
+              <TomatoButton
+                level={ timesPressed }
+                onClick={this.onPress}>{dialog[timesPressed]}
+              </TomatoButton>
+            </Fragment>
         )
     }
 } // end ConfirmButton
