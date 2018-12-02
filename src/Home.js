@@ -31,11 +31,12 @@ export default class Home extends Component {
 
                 {
                   posts.length > 0 && 
-                    posts.map(post => 
+                  posts.map(post => 
                     <MainDiv key={ post.id }>
                         <TitleDiv>{ post.title }</TitleDiv>
                         <BodyDiv>{ post.body }</BodyDiv>
                     </MainDiv>)
+                  
                 }
                                     
             </div>
