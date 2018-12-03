@@ -24,12 +24,12 @@ export default class Name extends Component {
       return (
         <Div className="name">
           <button onClick={this.changeName("Elvis")}>Change Name</button>
-          <input type="text" id="name" value={name} onChange={this.handleChange} />
+          <input type="text" id="name" value={ name } onChange={this.handleChange} />
           <h3>{ name }</h3>
         </Div>
       );
     }
-  }
+  } //end Class Name
   
   const Div = styled.div`
     margin: 110px auto;

@@ -26,19 +26,17 @@ export default class Home extends Component {
                 <h1 className="center">Posts</h1>
 
                 {
-                  !posts.length > 0 && <h2>No Posts</h2>
+                  !posts.length && <h2>No Posts</h2>
                 }
 
                 {
-                  posts.length > 0 && 
+                  posts.length && 
                   posts.map(post => 
                     <MainDiv key={ post.id }>
                         <TitleDiv>{ post.title }</TitleDiv>
                         <BodyDiv>{ post.body }</BodyDiv>
-                    </MainDiv>)
-                  
-                }
-                                    
+                    </MainDiv>)                  
+                }                                    
             </div>
         )
     }    
