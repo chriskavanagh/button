@@ -40,7 +40,7 @@ export default class Home extends Component {
             </div>
         )
     }    
-} // end Home
+} // ./Class Home
 
 const MainDiv = styled.div`
     margin: 40px auto;
@@ -65,31 +65,3 @@ const TitleDiv = styled.div`
 const BodyDiv = styled.div`
     font-size: 22px;
 `;
-
-
-
-
-
-{/*
-     render() {
-            const { posts } = this.state;
-            const postList = posts.length ? (
-                posts.map(post => {
-                    return (
-                        <MainDiv key={ post.id }>
-                            <TitleDiv>{ post.title }</TitleDiv>
-                            <BodyDiv>{ post.body }</BodyDiv>
-                        </MainDiv>
-                    )
-                })
-            ) : (<div className="center">No Posts Yet></div>)            
-    
-            return (
-                <div className="container">
-                    <h1 className="center">Posts</h1>
-                        { postList }
-                </div>
-            )
-        }
-        
-    */}

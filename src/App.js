@@ -4,6 +4,7 @@ import Toggle from './Toggle';
 import Name from './Name';
 import Home from './Home';
 import ConfirmButton from './ConfirmButton';
+import Toolbar from './Toolbar';
 import styled from 'styled-components';
 import './App.css';
 
@@ -12,7 +13,7 @@ class App extends Component {
   render() {
     return (    
       <div className="App">
-        
+        <Toolbar />
         <ConfirmButton 
           dialog={['Delete', 'Are You Sure?', '1 More Time', 'DONE!']} 
           action={ () => console.log("Action!") }

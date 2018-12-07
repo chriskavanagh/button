@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
 
-
 export default class ConfirmButton extends Component {
     static propTypes = {
         action: PropTypes.func.isRequired
@@ -35,15 +34,19 @@ export default class ConfirmButton extends Component {
         return(
             <Fragment>
                 <h2 className='red-text'>I am red h2</h2>
-              <TomatoButton
-                level={ timesPressed }
-                onClick={this.onPress}>{dialog[timesPressed]}
+            <Div>
+              <TomatoButton level={ timesPressed } onClick={this.onPress}>
+                {dialog[timesPressed]}
               </TomatoButton>
+            </Div>
             </Fragment>
         )
     }
-} // end ConfirmButton
+} // ./Class ConfirmButton
 
+const Div = styled.div`
+    display: flex;
+`;
 
 const TomatoButton = styled.button`
     background: tomato;
@@ -52,12 +55,12 @@ const TomatoButton = styled.button`
     color: white;
     text-transform: uppercase;
     font-weight: 900;
-    box-shadow: 1px 1px 5px rgba(0,0,0,0.2);
-    margin: 20px 0 20px 0;
+    box-shadow: 1px 1px 5px rgba(0,0,0,0.4);
+    margin: 100px auto 20px auto;
     padding: 8px 10px;
     ${({level}) => {
         if(level===1) return 'transform: scale(1.2);';
         if(level===2) return 'transform: scale(1.6);';
-        if(level===3) return 'transform: scale(3.0);background:blue;margin-top:40px;';
+        if(level===3) return 'transform: scale(3.0);background:blue;';
     }}
 `;
