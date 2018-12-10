@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 
-const ToggleButton = props=> (
+const ToggleButton = props => (
     <BTN>
         <Line></Line>
         <Line></Line>

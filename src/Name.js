@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 export default class Name extends Component {
     state = {
-        name: null
+        name: ""
     }
 
     changeName = (name) => () => {
@@ -15,8 +15,8 @@ export default class Name extends Component {
 
     handleChange = (e) => {
         this.setState({
-            name: e.target.value
-        })
+            name: e.target.value.substr(0, 25)
+        });
     };
 
     render() {

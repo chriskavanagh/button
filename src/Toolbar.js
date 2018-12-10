@@ -46,9 +46,9 @@ const ToolbarNav = styled.nav`
 `;
 
 const UL = styled.ul`
-    LIst-style:none;
-    margin:0;
-    padding:0;
+    LIst-style: none;
+    margin: 0;
+    padding: 0;
     display: flex;
 `;
 

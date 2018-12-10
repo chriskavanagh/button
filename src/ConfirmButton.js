@@ -33,7 +33,6 @@ export default class ConfirmButton extends Component {
         const { dialog } = this.props;
         return(
             <Fragment>
-                <h2 className='red-text'>I am red h2</h2>
             <Div>
               <TomatoButton level={ timesPressed } onClick={this.onPress}>
                 {dialog[timesPressed]}

@@ -1,6 +1,8 @@
 import React, { Component, Fragment } from 'react';
 //import { BrowserRouter, Route } from 'react-router-dom';
 import Toggle from './Toggle';
+import SideDrawer from './SideDrawer';
+import Backdrop from './Backdrop';
 import Name from './Name';
 import Home from './Home';
 import ConfirmButton from './ConfirmButton';
@@ -12,8 +14,10 @@ import './App.css';
 class App extends Component {
   render() {
     return (    
-      <div className="App">
+      <div style={{height:"100%"}} className="App">
         <Toolbar />
+        <SideDrawer />
+        <Backdrop />
         <ConfirmButton 
           dialog={['Delete', 'Are You Sure?', '1 More Time', 'DONE!']} 
           action={ () => console.log("Action!") }
