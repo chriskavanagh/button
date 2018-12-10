@@ -12,12 +12,36 @@ import './App.css';
 
 
 class App extends Component {
+  state = {
+    sideDrawerOpen: false
+  };
+
+  drawerToggleClickHandler = () => {
+    this.setState((prevState) => {
+      return {sideDrawerOpen: !prevState.sideDrawerOpen};
+    });
+  };
+
+  backdropClickHandler = () => {
+    this.setState({sideDrawerOpen: false});
+  };
+
   render() {
+    let backdrop;
+    let sideDrawer;
+
+    if (this.state.sideDrawerOpen){
+      sideDrawer = <SideDrawer />
+      backdrop = <Backdrop click={this.backdropClickHandler} />
+    }
+
     return (    
       <div style={{height:"100%"}} className="App">
-        <Toolbar />
-        <SideDrawer />
-        <Backdrop />
+        <Toolbar drawerClickHandler={this.drawerToggleClickHandler} />
+        
+        { sideDrawer }
+        { backdrop }
+
         <ConfirmButton 
           dialog={['Delete', 'Are You Sure?', '1 More Time', 'DONE!']} 
           action={ () => console.log("Action!") }

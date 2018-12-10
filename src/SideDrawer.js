@@ -1,15 +1,17 @@
 import React from 'react';
-import styled from 'styled-components';
+//import styled from 'styled-components';
+import './SideDrawer.css';
 
 const SideDrawer = props => (
-    <Nav>
-        <Ul>
-            <Li><a href="/">Products</a></Li>
-            <Li><a href="/users">Users</a></Li>
-        </Ul>
-    </Nav>
+    <nav className="side-drawer">
+        <ul>
+            <li><a href="/">Products</a></li>
+            <li><a href="/users">Users</a></li>
+        </ul>
+    </nav>
 );
 
+/*
 const Ul = styled.ul`
     display: flex;
     height: 100%;
@@ -31,6 +33,10 @@ const Nav = styled.nav`
     left: 0;
     max-width: 400px;
     z-index: 200;
+    transition: transform 0.3s ease-out;
+    ${(props) => {           
+        if(props.show) return 'transform: translateX(0);';
+    }}
 `;
-
+*/
 export default SideDrawer;

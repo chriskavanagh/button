@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 
 const ToggleButton = props => (
-    <BTN>
+    <BTN onClick={props.click}>
         <Line></Line>
         <Line></Line>
         <Line></Line>
