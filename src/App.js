@@ -18,7 +18,7 @@ class App extends Component {
 
   drawerToggleClickHandler = () => {
     this.setState((prevState) => {
-      return {sideDrawerOpen: !prevState.sideDrawerOpen};
+      return { sideDrawerOpen: !prevState.sideDrawerOpen };
     });
   };
 
@@ -28,18 +28,17 @@ class App extends Component {
 
   render() {
     let backdrop;
-    let sideDrawer;
+    
 
     if (this.state.sideDrawerOpen){
-      sideDrawer = <SideDrawer />
-      backdrop = <Backdrop click={this.backdropClickHandler} />
+      
+      backdrop = <Backdrop click={ this.backdropClickHandler } />
     }
 
     return (    
       <div style={{height:"100%"}} className="App">
-        <Toolbar drawerClickHandler={this.drawerToggleClickHandler} />
-        
-        { sideDrawer }
+        <Toolbar drawerClickHandler={ this.drawerToggleClickHandler } />
+        <SideDrawer show={ this.state.sideDrawerOpen } />
         { backdrop }
 
         <ConfirmButton 
@@ -52,16 +51,16 @@ class App extends Component {
 
         <Toggle render={({on, toggle}) => (
           <Fragment>                 
-            <ToggleButton onClick={toggle}>Show / Hide</ToggleButton>
-              {on && <H1>Hello React</H1>}
+            <ToggleButton onClick={ toggle }>Show / Hide</ToggleButton>
+              { on && <H1>Hello React</H1> }
           </Fragment>
           )}
         />
           
           <Toggle render={({on, toggle}) => (
             <Fragment>                 
-              <MenuButton onClick={toggle}>Home</MenuButton>
-              {on && <nav>Home</nav>}
+              <MenuButton onClick={ toggle }>Home</MenuButton>
+              { on && <nav>Home</nav> }
             </Fragment>
             )}
           />          

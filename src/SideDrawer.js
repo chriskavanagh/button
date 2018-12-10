@@ -1,15 +1,24 @@
 import React from 'react';
-//import styled from 'styled-components';
 import './SideDrawer.css';
+//import styled from 'styled-components';
 
-const SideDrawer = props => (
-    <nav className="side-drawer">
-        <ul>
-            <li><a href="/">Products</a></li>
-            <li><a href="/users">Users</a></li>
-        </ul>
-    </nav>
-);
+
+const SideDrawer = props => {
+    let drawerClasses = 'side-drawer';
+    if (props.show) {
+        drawerClasses = 'side-drawer open';
+    }
+    return (
+        <nav className={drawerClasses}>
+            <ul>
+                <li><a href="/">Products</a></li>
+                <li><a href="/users">Users</a></li>
+                <li><a href="/">Blog</a></li>
+                <li><a href="/users">Contact</a></li>
+            </ul>
+        </nav>
+       )
+    };
 
 /*
 const Ul = styled.ul`

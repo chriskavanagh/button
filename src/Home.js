@@ -23,7 +23,9 @@ export default class Home extends Component {
 
         return (
             <div className="container">
-                <h1 className="center">Posts</h1>
+                <CDIV>
+                    <h1>Posts</h1>
+                </CDIV>
 
                 {
                   !posts.length && <h2>No Posts</h2>
@@ -64,4 +66,10 @@ const TitleDiv = styled.div`
 
 const BodyDiv = styled.div`
     font-size: 22px;
+`;
+
+const CDIV = styled.div `
+    display: flex;
+    justify-content: center;
+    font-size: 1.9rem;
 `;

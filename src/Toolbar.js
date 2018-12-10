@@ -40,7 +40,7 @@ const A = styled.a`
 
 const ToolbarNav = styled.nav`
     display: flex;
-    aLIgn-items: center;
+    align-items: center;
     height: 100%;
     padding: 0 1rem;
 `;
