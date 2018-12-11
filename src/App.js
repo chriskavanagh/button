@@ -27,11 +27,9 @@ class App extends Component {
   };
 
   render() {
-    let backdrop;
-    
+    let backdrop;    
 
-    if (this.state.sideDrawerOpen){
-      
+    if (this.state.sideDrawerOpen){      
       backdrop = <Backdrop click={ this.backdropClickHandler } />
     }
 
@@ -39,6 +37,7 @@ class App extends Component {
       <div style={{height:"100%"}} className="App">
         <Toolbar drawerClickHandler={ this.drawerToggleClickHandler } />
         <SideDrawer show={ this.state.sideDrawerOpen } />
+
         { backdrop }
 
         <ConfirmButton 

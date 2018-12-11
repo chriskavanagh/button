@@ -14,8 +14,7 @@ export default class ConfirmButton extends Component {
 
     onPress = () => {
         const { timesPressed } = this.state;
-        const { dialog } = this.props;
-        const { action } = this.props;
+        const { dialog, action } = this.props;        
         this.setState({
             timesPressed: timesPressed + 1
         }, () => {
