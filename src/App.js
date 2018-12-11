@@ -32,7 +32,9 @@ class App extends Component {
         <Toolbar drawerClickHandler={ this.drawerToggleClickHandler } />
         <SideDrawer show={ this.state.sideDrawerOpen } />
 
-        { this.state.sideDrawerOpen && <Backdrop click={ this.backdropClickHandler }/> }
+        {
+           this.state.sideDrawerOpen && <Backdrop click={this.backdropClickHandler}/> 
+        }
 
         <ConfirmButton 
           dialog={['Delete', 'Are You Sure?', '1 More Time', 'DONE!']} 
@@ -40,6 +42,7 @@ class App extends Component {
         />
         
         <Name/>
+
         <Home/>
 
         <Toggle render={({on, toggle}) => (
