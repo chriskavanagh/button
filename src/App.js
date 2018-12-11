@@ -27,23 +27,17 @@ class App extends Component {
   };
 
   render() {
-    let backdrop;    
-
-    if (this.state.sideDrawerOpen){      
-      backdrop = <Backdrop click={ this.backdropClickHandler } />
-    }
-
     return (    
       <div style={{height:"100%"}} className="App">
         <Toolbar drawerClickHandler={ this.drawerToggleClickHandler } />
         <SideDrawer show={ this.state.sideDrawerOpen } />
 
-        { backdrop }
+        { this.state.sideDrawerOpen && <Backdrop click={ this.backdropClickHandler }/> }
 
         <ConfirmButton 
           dialog={['Delete', 'Are You Sure?', '1 More Time', 'DONE!']} 
           action={ () => console.log("Action!") }
-      />
+        />
         
         <Name/>
         <Home/>

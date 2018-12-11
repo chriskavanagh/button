@@ -6,6 +6,7 @@ import styled from 'styled-components';
 const Toolbar = props => (
     <Header>
         <ToolbarNav>
+            
             <div>
                 <ToggleButton click={props.drawerClickHandler} />
             </div>
